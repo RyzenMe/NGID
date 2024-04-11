@@ -116,7 +116,7 @@ Digits 18-32: Longitude position (can represent longitude information from 0 to 
 
 #  Encoding and decoding process
 
-##	NGID encoding steps
+## NGID encoding steps
 Determine latitude and longitude: Get the actual latitude and longitude information of the device.
 
 Convert to Binary: Converts latitude and longitude values to binary format. The latitude is from 0 to 90 degrees from north to south, and the longitude from 0 to 180 degrees from east to west.
@@ -211,4 +211,3 @@ To Do
 
 # Author Information
 To Do
-
