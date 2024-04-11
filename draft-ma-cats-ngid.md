@@ -58,21 +58,27 @@ informative:
 
 --- abstract
 
-This document proposes a novel network address encoding scheme, called Network Geoidentifier (NGID), which aims to improve the efficiency and accuracy of network device management by directly embedding geolocation information (latitude and longitude) into IPv6 and IPv4 addresses. This approach provides a native support for the geolocation of network devices and is expected to have a significant impact on the future of network management and service positioning.
+This document proposes a novel network address encoding scheme, called Network Geoidentifier (NGID), which aims to improve the efficiency and accuracy of network device management by directly embedding geolocation information (latitude and longitude) into IPv6 and IPv4 addresses.
+
+This approach provides a native support for the geolocation of network devices and is expected to have a significant impact on the future of network management and service positioning.
 
 
 --- middle
 
 # Introduction
 
-With the rapid growth of Internet devices, the traditional IP address system has shown its limitations in efficiently managing and identifying the physical location of devices. The NGID scheme proposed in this draft aims to solve this problem by directly encoding geolocation information in IPv6 and IPv4 addresses, so as to improve the management efficiency of network resources and optimize the geolocation of services.
+With the rapid growth of Internet devices, the traditional IP address system has shown its limitations in efficiently managing and identifying the physical location of devices.
+
+The NGID scheme proposed in this draft aims to solve this problem by directly encoding geolocation information in IPv6 and IPv4 addresses, so as to improve the management efficiency of network resources and optimize the geolocation of services.
 
 
 # The Definition of Terms
 
-NGID: Network geographic identification code, a new type of network address coding scheme. 
-Latitude: North or south latitude, measured from the equator to the north or south. 
-Longitude: East or west longitude, the angle measured from the prime meridian to east or west. 
+NGID: Network geographic identification code, a new type of network address coding scheme.
+
+Latitude: North or south latitude, measured from the equator to the north or south.
+
+Longitude: East or west longitude, the angle measured from the prime meridian to east or west.
 
 
 # Design of NGID
@@ -115,23 +121,40 @@ Digits 18-32: Longitude position (can represent longitude information from 0 to 
 ## NGID encoding steps
 Determine latitude and longitude: Get the actual latitude and longitude information of the device.
 
-Convert to Binary: Converts latitude and longitude values to binary format. The latitude is from 0 to 90 degrees from north to south, and the longitude from 0 to 180 degrees from east to west.
+Convert to Binary: Converts latitude and longitude values to binary format.
 
-Set the north-south latitude marker: set the first digit to 0 if it is north latitude, and set it to 1 if it is south latitude. 
+The latitude is from 0 to 90 degrees from north to south, and the longitude from 0 to 180 degrees from east to west.
+
+Set the north-south latitude marker: set the first digit to 0 if it is north latitude, and set it to 1 if it is south latitude.
 
 Set Latitude Position: Padding the binary value of latitude to bits 2-16.
 
-Set the east-west longitude marker: set the 17th bit to 0 if it is east longitude, and set it to 1 if it is west longitude. 
+Set the east-west longitude marker: set the 17th bit to 0 if it is east longitude, and set it to 1 if it is west longitude.
 
 Set longitude position: Padding the binary value of longitude to bits 18-32.
 
-Combined NGID: Combines the above binary bits into a 32-bit NGID. 
+Combined NGID: Combines the above binary bits into a 32-bit NGID.
 
 The geographical location is N 37.7749° and the longitude is W 122.4194°
-North and South Latitude Identification: Since the latitude is north latitude (N), the first digit is set to 0. 
-Latitude position: The latitude range is 0° to 90°. This range needs to be mapped into 15 bits. To simplify the process, the latitude value can be multiplied by a factor that allows it to be represented between 0 and 32767 (2^15 - 1). Specifically, multiply by (2^15 - 1)/90. For 37.7749°, the corresponding coded value is (37.7749 * (32767 / 90)). 
-East-West Longitude Mark: Because the longitude is West Longitude (W), the 17th position is set to 1. 
-Longitude position: Longitude ranges from 0° to 180°. Similar to latitude, this range needs to be mapped into 15 bits. Multiply by the factor (2^15 - 1)/180. For 122.4194°, the corresponding coded value is (122.4194 * (32767/180)). 
+North and South Latitude Identification: Since the latitude is north latitude (N), the first digit is set to 0.
+
+Latitude position: The latitude range is 0° to 90°.This range needs to be mapped into 15 bits.
+
+To simplify the process, the latitude value can be multiplied by a factor that allows it to be represented between 0 and 32767 (2^15 - 1).
+
+Specifically, multiply by (2^15 - 1)/90.
+
+For 37.7749°, the corresponding coded value is (37.7749 * (32767 / 90)).
+
+East-West Longitude Mark: Because the longitude is West Longitude (W), the 17th position is set to 1.
+
+Longitude position: Longitude ranges from 0° to 180°.
+
+Similar to latitude, this range needs to be mapped into 15 bits.
+
+Multiply by the factor (2^15 - 1)/180.
+
+For 122.4194°, the corresponding coded value is (122.4194 * (32767/180)).
 
 ## NGID decoding steps
 
@@ -145,37 +168,43 @@ Extract longitude position: Read the binary value of bits 18-32 and convert it t
 
 Convert to latitude and longitude: Converts the extracted latitude and longitude values to the actual latitude and longitude information.
 
-North and South Latitude Markers: Look at the 1st position, if it is 0, it is the north latitude, if it is 1, it is the south latitude. 
+North and South Latitude Markers: Look at the 1st position, if it is 0, it is the north latitude, if it is 1, it is the south latitude.
 
-Latitude Position: Extracts the values of bits 2-16 and converts them back to the original latitude. Assuming the extracted value is X, the original latitude is X / (32767 / 90). 
+Latitude Position: Extracts the values of bits 2-16 and converts them back to the original latitude.
 
-East-West Longitude Mark: Look at the 17th position, if it is 0, it is east longitude, if it is 1, it is west longitude. 
+Assuming the extracted value is X, the original latitude is X / (32767 / 90).
 
-Longitude Position: Extract the values of the 18th-32nd digits and convert them back to the original longitude. Assuming the extracted value is Y, the original longitude is Y / (32767 / 180). 
+East-West Longitude Mark: Look at the 17th position, if it is 0, it is east longitude, if it is 1, it is west longitude.
+
+Longitude Position: Extract the values of the 18th-32nd digits and convert them back to the original longitude.
+
+Assuming the extracted value is Y, the original longitude is Y / (32767 / 180).
 
 # Implementation considerations
 
-- The address space remains the same: The NGID design uses only a subset of bits in the IP address to encode geolocation information without changing the total length of the address. This means that existing network equipment and software can continue to use these addresses without any modifications. 
+- The address space remains the same: The NGID design uses only a subset of bits in the IP address to encode geolocation information without changing the total length of the address.
 
-- No need to modify existing protocols: Geolocation information is encoded within the existing address structure and does not require the introduction of new protocols or modifications to existing network protocol stacks. 
+This means that existing network equipment and software can continue to use these addresses without any modifications.
 
-- Backwards compatible: Newly designed addresses can be recognized and processed by legacy network devices that do not support NGI because these devices ignore specific bits used to encode geolocation. 
+- No need to modify existing protocols: Geolocation information is encoded within the existing address structure and does not require the introduction of new protocols or modifications to existing network protocol stacks.
 
-- Transparency: For applications and services that do not require geolocation information, the newly designed address is no different from a normal IP address and can be used transparently. 
+- Backwards compatible: Newly designed addresses can be recognized and processed by legacy network devices that do not support NGI because these devices ignore specific bits used to encode geolocation.
+
+- Transparency: For applications and services that do not require geolocation information, the newly designed address is no different from a normal IP address and can be used transparently.
 
 - Optional: NGIDs are optional features that network administrators can choose to enable in the appropriate network environment without affecting other parts of the network that do not use these features.
 
-- Simple address resolution: Geo-coding is simple and intuitive, making it easy to implement address resolution in existing systems without the need for complex conversion or mapping processes. 
+- Simple address resolution: Geo-coding is simple and intuitive, making it easy to implement address resolution in existing systems without the need for complex conversion or mapping processes.
 
-- Maintain network hierarchy: The design of the NGID takes into account the hierarchy of the existing network, ensuring that the assignment and management of addresses still follows the existing network architecture and policies. 
+- Maintain network hierarchy: The design of the NGID takes into account the hierarchy of the existing network, ensuring that the assignment and management of addresses still follows the existing network architecture and policies.
 
 # Security Considerations
 
 ## Security Risks
 
-- Location tracking: If an attacker is able to access an NGID, they may track the physical location of the device, causing a breach of the user's privacy. 
+- Location tracking: If an attacker is able to access an NGID, they may track the physical location of the device, causing a breach of the user's privacy.
 
-- Address mapping: By analyzing NGIDs, an attacker could construct an accurate map of the device's location, which could be used for inappropriate purposes, such as targeted attacks. 
+- Address mapping: By analyzing NGIDs, an attacker could construct an accurate map of the device's location, which could be used for inappropriate purposes, such as targeted attacks.
 
 - Traffic analysis: Attackers may use geolocation information to analyze network traffic patterns to infer sensitive information.
 
@@ -185,7 +214,7 @@ Longitude Position: Extract the values of the 18th-32nd digits and convert them 
 
 - Encryption: Encrypt NGIDs to ensure that only authorized network entities can parse and use this information.
 
-- Anonymization: Use a mechanism to change the NGID periodically to prevent long-term tracking. 
+- Anonymization: Use a mechanism to change the NGID periodically to prevent long-term tracking.
 
 - Access control: Restrict access to NGIDs to ensure that only trusted network nodes can access this information.
 
