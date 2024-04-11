@@ -19,8 +19,8 @@
 # Change the file extension to match the format (.xml for XML, etc...)
 #
 ###
-title: "TODO - Your title"
-abbrev: "TODO - Abbreviation"
+title: "Network Geographic Identification in Computing-Aware Traffic Steering "
+abbrev: "NGID"
 category: info
 
 docname: draft-todo-yourname-protocol-latest
