@@ -19,7 +19,7 @@ author:
  -
     fullname: "Yuyin Ma"
     organization: Beijing Jiaotong University
-    email: "mayuyin@bjtu.edu.cn"
+    email: "myy@ieee.org"
  -
     fullname: "Tianhao Peng"
     organization: Beijing Jiaotong University
