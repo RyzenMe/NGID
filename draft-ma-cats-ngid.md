@@ -30,10 +30,6 @@ author:
     organization: Beijing Jiaotong University
     email: "22120037@bjtu.edu.cn"
  -
-    fullname: "Tianhao Peng"
-    organization: Beijing Jiaotong University
-    email: "th.peng@bjtu.edu.cn"
- -
     fullname: "Qixuan Zhang"
     organization: Beijing Jiaotong University
     email: "23120155@bjtu.edu.cn"
