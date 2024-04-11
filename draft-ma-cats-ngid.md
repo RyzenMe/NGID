@@ -48,6 +48,14 @@ author:
     fullname: "Yuanming Sun"
     organization: China University of Petroleum-Beijing at Karamay(CUPK)
     email: "2021015433@st.cupk.edu.cn"
+ -
+    fullname: "Qihao Si"
+    organization: Beijing Jiaotong University
+    email: "21211129@bjtu.edu.cn"
+ -
+    fullname: "Haocheng Lang"
+    organization: Beijing Jiaotong University
+    email: "22211145@bjtu.edu.cn"
 
 
 normative:
