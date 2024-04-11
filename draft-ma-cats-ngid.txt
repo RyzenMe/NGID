@@ -379,7 +379,7 @@ Authors' Addresses
 
    Yuyin Ma
    Beijing Jiaotong University
-   Email: mayuyin@bjtu.edu.cn
+   Email: myy@ieee.org
 
 
    Tianhao Peng
