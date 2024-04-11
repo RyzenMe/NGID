@@ -1,6 +1,6 @@
 ---
 title: The Network Geographic identification in Computing-Aware Traffic Steering
-abbrev:NGID
+abbrev: NGID
 category: info
 
 docname: draft-ma-cats-ngid-latest
