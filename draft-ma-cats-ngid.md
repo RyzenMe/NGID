@@ -12,9 +12,8 @@ v: 3
 area: Routing area
 workgroup: cats
 keyword:
- - User Experience
  - Collaborative Networking
- - Service optimization
+
 
 author:
  -
@@ -49,7 +48,7 @@ author:
     fullname: "Yuanming Sun"
     organization: China University of Petroleum-Beijing at Karamay(CUPK)
     email: "2021015433@st.cupk.edu.cn"
-    
+
 
 normative:
 
