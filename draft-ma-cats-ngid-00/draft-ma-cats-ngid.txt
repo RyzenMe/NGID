@@ -12,6 +12,9 @@ Expires: 13 October 2024                                        Q. Zhang
                                                                 Y. Zhang
                                                                   Y. Sun
                   China University of Petroleum-Beijing at Karamay(CUPK)
+                                                                   Q. Si
+                                                                 H. Lang
+                                             Beijing Jiaotong University
                                                            11 April 2024
 
 
@@ -376,7 +379,7 @@ Authors' Addresses
 
    Yuyin Ma
    Beijing Jiaotong University
-   Email: mayuyin@bjtu.edu.cn
+   Email: myy@ieee.org
 
 
    Tianhao Peng
@@ -412,3 +415,13 @@ Authors' Addresses
    Yuanming Sun
    China University of Petroleum-Beijing at Karamay(CUPK)
    Email: 2021015433@st.cupk.edu.cn
+
+
+   Qihao Si
+   Beijing Jiaotong University
+   Email: 21211129@bjtu.edu.cn
+
+
+   Haocheng Lang
+   Beijing Jiaotong University
+   Email: 22211145@bjtu.edu.cn
