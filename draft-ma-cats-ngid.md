@@ -87,38 +87,59 @@ Longitude: East or west longitude, the angle measured from the prime meridian to
 This section describes in detail the encoding scheme for NGID, including its implementation in the IPv6 and IPv4 address schemes.
 
 ## 8-bit NGID
+
 1st place: North and south latitude identifiers (0 for north latitude, 1 for south latitude).
+
 Digits 2-4: Latitude position (binary encoding, can represent the range from 0 to 15, roughly representing latitude information)
+
 5th place: East and West longitude identification (0 for east longitude, 1 for west longitude).
+
 Bits 6-8: Longitude position (binary encoded, can represent the interval from 0 to 15, roughly represent longitude information)
 
 ## 12-bit NGID
+
 1st place: North and south latitude identifiers (0 for north latitude, 1 for south latitude).
+
 Bits 2-6: Latitude position (binary encoded, which can represent a range from 0 to 31, providing better latitude accuracy than an 8-bit scheme)
+
 7th place: East and West longitude identification (0 for east longitude, 1 for west longitude).
+
 Bits 8-12: Longitude position (binary encoded, which can represent a range from 0 to 31, providing better longitude accuracy than the 8-bit scheme)
 
 ## 16-bit NGID
+
 1st place: North and south latitude identifiers (0 for north latitude, 1 for south latitude).
+
 Digits 2-8: Latitude position (binary encoded to represent the range from 0 to 127, which significantly improves the accuracy of latitude representation)
+
 9th place: East and West longitude identification (0 represents east longitude, 1 represents west longitude).
+
 Digits 10-16: Longitude position (binary encoded to represent the range from 0 to 127, significantly improving the accuracy of longitude representation)
 
 ## 24-bit NGID
+
 1st place: North and south latitude identifiers (0 for north latitude, 1 for south latitude).
+
 Digits 2-12: Latitude position (can represent latitude information from 0 to 4095 with an accuracy of 90/4095 degrees)
+
 13th place: East and West longitude identification (0 for east longitude, 1 for west longitude).
+
 Digits 14-24: Longitude position (can represent longitude information from 0 to 4095 with an accuracy of 180/4095 degrees)
 
 ## 32-bit NGID
+
 1st place: North and south latitude identifiers (0 for north latitude, 1 for south latitude).
+
 Digits 2-16: Latitude position (can represent latitude information from 0 to 32767 with an accuracy of 90/32767 degrees)
+
 17th place: East and West longitude identification (0 for east longitude, 1 for west longitude).
+
 Digits 18-32: Longitude position (can represent longitude information from 0 to 32767 with an accuracy of 180/32767 degrees)
 
 #  Encoding and decoding process
 
 ## NGID encoding steps
+
 Determine latitude and longitude: Get the actual latitude and longitude information of the device.
 
 Convert to Binary: Converts latitude and longitude values to binary format.
