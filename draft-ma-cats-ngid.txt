@@ -5,17 +5,20 @@
 cats                                                               Y. Ma
 Internet-Draft                                                   T. Peng
 Intended status: Informational                                   G. Dong
-Expires: 13 October 2024                                        Q. Zhang
+Expires: 15 October 2024                                        Q. Zhang
                                                                    X. Lv
+                                                                   G. He
                                              Beijing Jiaotong University
                                                                   Y. Sun
                                                                 Y. Zhang
-                                                                  Y. Sun
+                                                                 J. Chen
                   China University of Petroleum-Beijing at Karamay(CUPK)
                                                                    Q. Si
                                                                  H. Lang
                                              Beijing Jiaotong University
-                                                           11 April 2024
+                                                                 X. Wang
+                                        Alibaba Cloud Computing Co. Ltd.
+                                                           13 April 2024
 
 
     The Network Geographic identification in Computing-Aware Traffic
@@ -49,7 +52,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 13 October 2024.
+   This Internet-Draft will expire on 15 October 2024.
 
 Copyright Notice
 
@@ -402,6 +405,11 @@ Authors' Addresses
    Email: 20251239@bjtu.edu.cn
 
 
+   Guangjing He
+   Beijing Jiaotong University
+   Email: heguangjing@bjtu.edu.cn
+
+
    Yuanming Sun
    China University of Petroleum-Beijing at Karamay(CUPK)
    Email: 2021015417@st.cupk.edu.cn
@@ -412,7 +420,7 @@ Authors' Addresses
    Email: 2021015367@st.cupk.edu.cn
 
 
-   Yuanming Sun
+   Jiali Chen
    China University of Petroleum-Beijing at Karamay(CUPK)
    Email: 2021015433@st.cupk.edu.cn
 
@@ -425,3 +433,8 @@ Authors' Addresses
    Haocheng Lang
    Beijing Jiaotong University
    Email: 22211145@bjtu.edu.cn
+
+
+   Xiuling Wang
+   Alibaba Cloud Computing Co. Ltd.
+   Email: wangxiuling.wxl@alibaba-inc.com
