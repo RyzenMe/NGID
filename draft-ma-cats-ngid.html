@@ -1191,6 +1191,9 @@ svg :is([fill="white"], [fill^="#fff"]) {
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.5">
                 <p id="section-toc.1-1.3.2.5.1"><a href="#section-3.5" class="auto internal xref">3.5</a>.  <a href="#name-32-bit-ngid" class="internal xref">32-bit NGID</a></p>
 </li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.6">
+                <p id="section-toc.1-1.3.2.6.1"><a href="#section-3.6" class="auto internal xref">3.6</a>.  <a href="#name-8-bit-ngid-expand-altitudeo" class="internal xref">8-bit NGID Expand Altitude(Optional)</a></p>
+</li>
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4">
@@ -1315,6 +1318,17 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <p id="section-3.5-2">Digits 2-16: Latitude position (can represent latitude information from 0 to 32767 with an accuracy of 90/32767 degrees)<a href="#section-3.5-2" class="pilcrow">¶</a></p>
 <p id="section-3.5-3">17th place: East and West longitude identification (0 for east longitude, 1 for west longitude).<a href="#section-3.5-3" class="pilcrow">¶</a></p>
 <p id="section-3.5-4">Digits 18-32: Longitude position (can represent longitude information from 0 to 32767 with an accuracy of 180/32767 degrees)<a href="#section-3.5-4" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="bit-ngid-expand-altitudeoptional">
+<section id="section-3.6">
+        <h3 id="name-8-bit-ngid-expand-altitudeo">
+<a href="#section-3.6" class="section-number selfRef">3.6. </a><a href="#name-8-bit-ngid-expand-altitudeo" class="section-name selfRef">8-bit NGID Expand Altitude(Optional)</a>
+        </h3>
+<p id="section-3.6-1">The first digit is used to indicate the positive or negative altitude (0 represents a negative value, 1 represents a positive value).<a href="#section-3.6-1" class="pilcrow">¶</a></p>
+<p id="section-3.6-2">The 2nd to 8th digits are used to indicate the magnitude of altitude.<a href="#section-3.6-2" class="pilcrow">¶</a></p>
+<p id="section-3.6-3">If the altitude is negative, set the first digit to 0; If positive, set to 1.<a href="#section-3.6-3" class="pilcrow">¶</a></p>
+<p id="section-3.6-4">Divide the absolute value of altitude by 20 meters (new step value), then convert the result to binary form and store it in bits 2-8.<a href="#section-3.6-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>

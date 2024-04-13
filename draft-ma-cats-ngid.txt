@@ -78,6 +78,7 @@ Table of Contents
      3.3.  16-bit NGID
      3.4.  24-bit NGID
      3.5.  32-bit NGID
+     3.6.  8-bit NGID Expand Altitude(Optional)
    4.  Encoding and decoding process
      4.1.  NGID encoding steps
      4.2.  NGID decoding steps
@@ -191,6 +192,19 @@ Table of Contents
 
    Digits 18-32: Longitude position (can represent longitude information
    from 0 to 32767 with an accuracy of 180/32767 degrees)
+
+3.6.  8-bit NGID Expand Altitude(Optional)
+
+   The first digit is used to indicate the positive or negative altitude
+   (0 represents a negative value, 1 represents a positive value).
+
+   The 2nd to 8th digits are used to indicate the magnitude of altitude.
+
+   If the altitude is negative, set the first digit to 0; If positive,
+   set to 1.
+
+   Divide the absolute value of altitude by 20 meters (new step value),
+   then convert the result to binary form and store it in bits 2-8.
 
 4.  Encoding and decoding process
 
