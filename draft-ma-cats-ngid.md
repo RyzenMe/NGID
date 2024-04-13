@@ -37,6 +37,10 @@ author:
     organization: Beijing Jiaotong University
     email: "20251239@bjtu.edu.cn"
  -
+    fullname: "Guangjing He"
+    organization: Beijing Jiaotong University
+    email: "heguangjing@bjtu.edu.cn"
+ -
     fullname: "Yuanming Sun"
     organization: China University of Petroleum-Beijing at Karamay(CUPK)
     email: "2021015417@st.cupk.edu.cn"
@@ -45,7 +49,7 @@ author:
     organization: China University of Petroleum-Beijing at Karamay(CUPK)
     email: "2021015367@st.cupk.edu.cn"
  -
-    fullname: "Yuanming Sun"
+    fullname: "Jiali Chen"
     organization: China University of Petroleum-Beijing at Karamay(CUPK)
     email: "2021015433@st.cupk.edu.cn"
  -
@@ -56,7 +60,10 @@ author:
     fullname: "Haocheng Lang"
     organization: Beijing Jiaotong University
     email: "22211145@bjtu.edu.cn"
-
+ -
+    fullname: "Xiuling Wang"
+    organization: Alibaba Cloud Computing Co. Ltd.
+    email: "wangxiuling.wxl@alibaba-inc.com"
 
 normative:
 
